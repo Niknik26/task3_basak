@@ -4,7 +4,7 @@ def read_sales_data(file_path):
     file = file_path #путь к файлу
     keys = ['product_name', 'quantity', 'price', 'date'] # список ключей
     sales = [] # список для хранения словарей
-    with open(file, 'r') as file: # открытие файла
+    with open(file, "r", encoding='utf-8') as file:  # открытие файла
         for line in file: # построчное чтение
             lines = line.strip().split(', ') # удаление символов новой строки и пробелов, разделение строки через ', ' на список
             sale = dict(zip(keys, lines)) # создание словаря для каждого элемента из списка ключей и списка значений
